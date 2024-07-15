@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enviar dato</title>
+    <script>
+      function seleccionarValor(valor) {
+        if (valor != "") {
+          document.getElementById("valorSeleccionado").value += valor;
+        } else {
+          document.getElementById("valorSeleccionado").value = valor;
+        }
+      }
+
+      function enviarFormulario() {
+        document.getElementById("formulario").submit();
+      }
+    </script>
+  </head>
+  <body>
+    <form id="formulario" action="prueva.php" method="post">
+      <!-- Botones para seleccionar un valor -->
+      <button type="button" onclick="seleccionarValor('1')">
+        Seleccionar Valor 1
+      </button>
+      <button type="button" onclick="seleccionarValor('2')">
+        Seleccionar Valor 2
+      </button>
+      <button type="button" onclick="seleccionarValor('3')">
+        Seleccionar Valor 3
+      </button>
+
+      <!-- Campo oculto para almacenar el valor seleccionado -->
+      <input type="hidden" id="valorSeleccionado" name="valorSeleccionado" />
+
+      <!-- Botón para enviar el formulario -->
+      <button type="button" onclick="enviarFormulario()">Enviar</button>
+    </form>
+  </body>
+</html>

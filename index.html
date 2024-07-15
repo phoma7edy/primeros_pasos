@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="padding: 30px">
+    <form action="operar.php" method="post">
+      TIPO DE TEXTO <br />
+      <input type="text" name="texto" /><br />
+
+      TIPO RADIO <br />
+      <input type="radio" name="radio" value="si" />SI
+      <input type="radio" name="radio" value="no" />NO<br />
+
+      TIPO CHECKBOX<br />
+      <input type="checkbox" name="checkbox" value="opcion_1" />opcion 1
+      <input type="checkbox" name="checkbox" value="opcion_2" />opcion 2<br />
+
+      TIPO BOTTON<br />
+      <input
+        type="button"
+        name="boton"
+        value="BOTON"
+        placeholder="QUE HAY"
+      /><br />
+
+      TIPO FILE<br />
+      <input type="file" name="file" /><br />
+
+      TIPO HIDEN<br />
+      <input type="hidden" name="hidden" value="esto se nuestra" /><br />
+
+      TIPO PASSWORD<br />
+      <input type="password" name="password" /><br />
+
+      TIPO SUBMIT<br />
+      <input type="submit" name="submit1" value="primero" /><br />
+
+      TIPO SELECTOR SIMPLE<br />
+      <select name="selectSimple" id="">
+        <option disabled selected>seleccionar</option>
+        <option value="diseñador">diseñador</option>
+        <option value="ingenioro">ingenioro</option>
+        <option value="vendedor">vendedor</option>
+        <option value="programador">programador</option></select
+      ><br />
+      <br />
+
+      TIPO SELECTOR MULTIPLE<br />
+      <select name="selectMultiple" id="multiple" size="4">
+        <option disabled selected value="estado">estado</option>
+        <option value="Feliz">Feliz</option>
+        <option value="Dormilón">Dormilón</option>
+        <option value="Tímido">Tímido</option>
+        <option value="enfermo">enfermo</option>
+        <option value="cansado">cansado</option></select
+      ><br /><br />
+
+      selector texto de area <br />
+      <strong>
+        <textarea
+          rows="3"
+          cols="40"
+          name="textoArea"
+          placeholder="Escribe un comentario..."
+        ></textarea>
+      </strong>
+
+      <br /><br />
+      <input type="submit" name="enviar1" value="ACTIVO" /><br />
+      <br />
+    </form>
+
+    <select name="lenguajes" id="lang">
+      <optgroup label="primera-opcion">
+        <option value="javascript">JavaScript</option>
+        <option value="php">PHP</option>
+        <option value="java">Java</option>
+        <option value="golang">Golang</option>
+      </optgroup>
+      <optgroup label="segunda-opcion">
+        <option value="python">Python</option>
+        <option value="c#">C#</option>
+        <option value="C++">C++</option>
+        <option value="erlang">Erlang</option>
+      </optgroup>
+    </select>
+
+    <br />
+    <br />
+
+    <br /><br />
+  </body>
+</html>

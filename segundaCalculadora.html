@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @tailwind base;
+      @tailwind components;
+      @tailwind utilities;
+
+      @layer base {
+        :root {
+          --background: 240 5% 6%;
+          --foreground: 60 5% 90%;
+          --primary: 240 0% 90%;
+          --primary-foreground: 60 0% 0%;
+          --secondary: 240 4% 15%;
+          --secondary-foreground: 60 5% 85%;
+          --accent: 240 0% 13%;
+          --accent-foreground: 60 0% 100%;
+          --destructive: 0 60% 50%;
+          --destructive-foreground: 0 0% 98%;
+          --muted: 240 5% 25%;
+          --muted-foreground: 60 5% 85%;
+          --card: 240 4% 10%;
+          --card-foreground: 60 5% 90%;
+          --popover: 240 5% 15%;
+          --popover-foreground: 60 5% 85%;
+          --border: 240 6% 20%;
+          --input: 240 6% 20%;
+          --ring: 240 5% 90%;
+          --radius: 0.5rem;
+        }
+      }
+
+      @layer base {
+        * {
+          @apply border-border;
+        }
+
+        body {
+          @apply bg-background text-foreground font-body;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          @apply font-heading;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+// v0 by Vercel.
+// https://v0.dev/t/WnO93fzPfld
+-->
+
+    <div class="flex min-h-screen items-center justify-center bg-background">
+      <div class="w-full max-w-md space-y-8">
+        <div class="text-center">
+          <h1 class="text-3xl font-bold tracking-tight">Advanced Calculator</h1>
+        </div>
+        <div
+          class="relative h-[580px] overflow-hidden rounded-lg bg-card shadow-lg"
+        >
+          <div
+            class="absolute inset-0 flex flex-col items-center justify-center space-y-6 bg-card p-6 rounded-lg"
+          >
+            <div class="w-full">
+              <div
+                class="bg-muted rounded-lg p-4 mb-4 text-right text-3xl font-bold"
+              >
+                0
+              </div>
+              <div class="grid grid-cols-4 gap-4">
+                <button
+                  class="inline-flex items-center justify-center whitespace-nowrap ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 rounded-lg bg-red-500 text-2xl font-bold text-white"
+                >
+                  C
+                </button>
+                <button
+                  class="inline-flex items-center justify-center whitespace-nowrap ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 rounded-lg bg-primary text-2xl font-bold text-primary-foreground"
+                >
+                  √
+                </button>
+                <button
+                  class="inline-flex items-center justify-center whitespace-nowrap ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 rounded-lg bg-primary text-2xl font-bold text-primary-foreground"
+                >
+                  x²
+                </button>
+                <button
+                  class="inline-flex items-center justify-center whitespace-nowrap ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 rounded-lg bg-primary text-2xl font-bold text-primary-foreground"
+                >
+                  1/x
+                </button>
+                <button
+                  class="inline-flex items-center justify-center whitespace-nowrap ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 rounded-lg bg-muted text-2xl font-bold"
+                >
+                  7
+                </button>
+                <button
+                  class="inline-flex items-center justify-center whitespace-nowrap ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 rounded-lg bg-muted text-2xl font-bold"
+                >
+                  8
+                </button>
+                <button
+                  class="inline-flex items-center justify-center whitespace-nowrap ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 rounded-lg bg-muted text-2xl font-bold"
+                >
+                  9
+                </button>
+                <button
+                  class="inline-flex items-center justify-center whitespace-nowrap ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 rounded-lg bg-primary text-2xl font-bold text-primary-foreground"
+                >
+                  /
+                </button>
+                <button
+                  class="inline-flex items-center justify-center whitespace-nowrap ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 rounded-lg bg-muted text-2xl font-bold"
+                >
+                  4
+                </button>
+                <button
+                  class="inline-flex items-center justify-center whitespace-nowrap ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 rounded-lg bg-muted text-2xl font-bold"
+                >
+                  5
+                </button>
+                <button
+                  class="inline-flex items-center justify-center whitespace-nowrap ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 rounded-lg bg-muted text-2xl font-bold"
+                >
+                  6
+                </button>
+                <button
+                  class="inline-flex items-center justify-center whitespace-nowrap ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 rounded-lg bg-primary text-2xl font-bold text-primary-foreground"
+                >
+                  *
+                </button>
+                <button
+                  class="inline-flex items-center justify-center whitespace-nowrap ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 rounded-lg bg-muted text-2xl font-bold"
+                >
+                  1
+                </button>
+                <button
+                  class="inline-flex items-center justify-center whitespace-nowrap ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 rounded-lg bg-muted text-2xl font-bold"
+                >
+                  2
+                </button>
+                <button
+                  class="inline-flex items-center justify-center whitespace-nowrap ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 rounded-lg bg-muted text-2xl font-bold"
+                >
+                  3
+                </button>
+                <button
+                  class="inline-flex items-center justify-center whitespace-nowrap ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 rounded-lg bg-primary text-2xl font-bold text-primary-foreground"
+                >
+                  -
+                </button>
+                <button
+                  class="inline-flex items-center justify-center whitespace-nowrap ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 rounded-lg bg-muted text-2xl font-bold col-span-2"
+                >
+                  0
+                </button>
+                <button
+                  class="inline-flex items-center justify-center whitespace-nowrap ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 rounded-lg bg-muted text-2xl font-bold"
+                >
+                  .
+                </button>
+                <button
+                  class="inline-flex items-center justify-center whitespace-nowrap ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 rounded-lg bg-primary text-2xl font-bold text-primary-foreground"
+                >
+                  x!
+                </button>
+                <button
+                  class="inline-flex items-center justify-center whitespace-nowrap ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 rounded-lg bg-primary text-2xl font-bold text-primary-foreground"
+                >
+                  +
+                </button>
+                <button
+                  class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
+                ></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
